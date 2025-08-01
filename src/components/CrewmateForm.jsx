@@ -69,7 +69,7 @@ const CrewmateForm = ({initialData = {}, onSubmit, submitLabel}) => {
                 <input value={wish} onChange={e => setWish(e.target.value)} />
             </label>
 
-            <button className='submit-button' type='submit'>{submitLabel || 'Submit'}</button>
+            <button className='submit-button' type='submit'>{submitLabel}</button>
         </form>
     );
 }

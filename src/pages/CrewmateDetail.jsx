@@ -5,22 +5,44 @@ import { useEffect, useState } from 'react';
 const CrewmateDetail = () => {
     const { id } = useParams();
 
-    const [data, setData] = useState();
+    const [data, setData] = useState(null);
+
+    const [loading, setLoading] = useState(true);
+
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
-            const { data } = await supabase.from('crewmates').select().eq('id', id).single();
+            try {
+                const { data, error } = await supabase.from('crewmates').select().eq('id', id).single();
 
-            setData(data);
+                if (error) console.log(error);
+                
+                setData(data);
+
+                console.log(data.name)
+            } catch (err) {
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
         }
 
         fetchData();
     }, [id]);
 
-    if (!data) return <div>Loading...</div>;
+    if (loading) return <div>Loading...</div>;
+
+    if (error) return <div>Error: {error}</div>;
+
+    if (!data) return <div>No magical girl found.</div>
 
     return (
         <div className='page-container'>
+            <Link to='/'>
+                <button>Back to Dashboard</button>
+            </Link>
+            
             <h2>{data.name}</h2>
 
             <div className='theme-color-img' style={{background: data.theme_color, width:60, height:60, borderRadius: '50%'}}></div>

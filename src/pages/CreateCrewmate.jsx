@@ -8,7 +8,11 @@ const CreateCrewmate = () => {
     const handleSubmit = async (crewmate) => {
         const { data, error } = await supabase.from('crewmates').insert([{ ...crewmate }]).select().single();
 
-        if (!error) navigate(`/detail/${data.id}`);
+        if (!error) {
+            navigate(`/detail/${data.id}`);
+        } else {
+            console.log(error);
+        }
     }
 
     return (

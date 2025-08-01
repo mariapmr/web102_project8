@@ -4,7 +4,7 @@ Submitted by: Maria Priebe Rocha
 
 This web app: allows a user to create a magical girl from Madoka Magica as well as edit and delete previously created magical girls.
 
-Time spent: 7 hours spent in total
+Time spent: 8 hours spent in total
 
 ## Required Features
 
@@ -46,10 +46,10 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='project-demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with Mac OS Screen Recorder and [EzGIF](https://ezgif.com/).  
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -57,7 +57,7 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+It was challenging to properly style the web page and to set up the Supabase table to accept arrays.
 
 ## License
 
